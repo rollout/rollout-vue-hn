@@ -25,10 +25,10 @@
     <template slot="end">
       <b-navbar-item tag="div">
         <div class="buttons">
-          <a class="button is-black" v-if="loggedIn" @click="logout">
+          <a class="button is-black" v-if="loggedIn" @click="logout"><!-- <a class="loginButtonColor" v-if="loggedIn" @click="logout"> -->
             Log out
           </a>
-          <a class="button is-black" v-else href="/login">
+          <a class="button is-black" v-else href="/login"><!-- <a class="loginButtonColor" v-if="loggedIn" @click="logout"> -->
             Log in
           </a>
         </div>
@@ -54,7 +54,8 @@ export default {
       headerColor: Flags.headerColor.getValue(),
       ask: Flags.ask.isEnabled(),
       show: Flags.show.isEnabled(),
-      isBeta: betaAccess()
+      isBeta: betaAccess()/*,
+      loginButtonColor: Flags.loginButtonColor.getValue()*/
     }
   },
   methods: {
