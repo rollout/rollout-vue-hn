@@ -5,7 +5,8 @@ export const Flags = {
   score: new Rox.Flag(false),
   ask: new Rox.Flag(false),
   show: new Rox.Flag(false),
-  headerColor: new Rox.Variant('is-dark', ['is-dark', 'is-primary', 'is-white'])
+  headerColor: new Rox.Variant('is-dark', ['is-dark', 'is-primary', 'is-white'])/*,
+  loginButtonColor: new Rox.Variant('button is-black', ['button is-black', 'button is-primary'])*/
 }
 
 export const configurationFetchedHandler = fetcherResults => {
@@ -14,7 +15,7 @@ export const configurationFetchedHandler = fetcherResults => {
   }
 }
 
-export const impressionHandler = (reporting, experiment) => {
+/*export const impressionHandler = (reporting, experiment) => {
   if (experiment) {
     console.log('flag ' + reporting.name + ' value is ' + reporting.value + ', it is part of ' + experiment.name + ' experiment')
     gtag('event', experiment.name, {
@@ -24,11 +25,11 @@ export const impressionHandler = (reporting, experiment) => {
   } else {
     console.log('No experiment configured for flag ' + reporting.name + '. default value ' + reporting.value + ' was used')
   }
-}
+}*/
 
 const options = {
-  configurationFetchedHandler: configurationFetchedHandler,
-  impressionHandler: impressionHandler
+  configurationFetchedHandler: configurationFetchedHandler/*,
+  impressionHandler: impressionHandler*/
 }
 
 Rox.setCustomBooleanProperty('isBetaUser', betaAccess())
